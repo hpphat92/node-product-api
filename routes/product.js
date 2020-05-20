@@ -1,17 +1,7 @@
-var express = require('express')
-var query = require('../query/category');
+var express = require('express');
+var query = require('../query/product');
 
 var router = express.Router();
-
-async function checkExisting(res, name, ignoreCategoryId) {
-  const categories = await query.checkExisting(name, ignoreCategoryId);
-
-  // Check duplicate
-  if (categories && categories.length) {
-    res.status(400).send('Category name exists');
-  }
-}
-
 
 // define the home page route
 router.get('/', function (req, res) {
@@ -71,14 +61,13 @@ router.put('/', async function (req, res) {
 router.post('/', async function (req, res) {
   const body = req.body;
 
-  await checkExisting(res, body.name);
 
   query.create(body)
     .then((response) => {
       console.log('response', response);
       res.status(200).send(response);
     }, (err) => {
-      res.status(400).send('Error during creating category');
+      res.status(400).send('Error during creating product');
     })
 
 });

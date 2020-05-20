@@ -1,14 +1,14 @@
-var express = require('express')
-var query = require('../query/category');
+var express = require('express');
+var query = require('../query/productProperty');
 
 var router = express.Router();
 
-async function checkExisting(res, name, ignoreCategoryId) {
-  const categories = await query.checkExisting(name, ignoreCategoryId);
+async function checkExisting(res, name, ignoreProductPropertyId) {
+  const categories = await query.checkExisting(name, ignoreProductPropertyId);
 
   // Check duplicate
   if (categories && categories.length) {
-    res.status(400).send('Category name exists');
+    res.status(400).send('Property name exists');
   }
 }
 
@@ -24,35 +24,35 @@ router.get('/', function (req, res) {
 router.get('/:id', async function (req, res) {
   const id = req.param('id');
   try {
-    const category = await query.getById(id);
+    const productProperty = await query.getById(id);
 
-    if (!category) {
-      res.status(404).send('Category not found');
+    if (!productProperty) {
+      res.status(404).send('Property not found');
       return;
     }
 
-    res.status(200).send(category);
+    res.status(200).send(productProperty);
   } catch (e) {
-    res.status(400).send('Error when retrieving category')
+    res.status(400).send('Error when retrieving property list')
   }
 
 });
 router.delete('/:id', async function (req, res) {
   const id = req.param('id');
   try {
-    const category = await query.getById(id);
+    const productProperty = await query.getById(id);
 
-    if (!category) {
-      res.status(404).send('Category not found');
+    if (!productProperty) {
+      res.status(404).send('Property not found');
       return;
     }
 
-    const deleteStt = await query.deleteById(category.id);
+    const deleteStt = await query.deleteById(productProperty.id);
     console.log('deleteStt', deleteStt);
     res.sendStatus(200);
 
   } catch (e) {
-    res.status(400).send('Error when deleting category')
+    res.status(400).send('Error when deleting property')
   }
 });
 router.put('/', async function (req, res) {
@@ -64,7 +64,7 @@ router.put('/', async function (req, res) {
     .then((response) => {
       res.sendStatus(200);
     }, (err) => {
-      res.status(400).send('Error during updating category');
+      res.status(400).send('Error during updating property');
     })
 
 });
@@ -78,7 +78,7 @@ router.post('/', async function (req, res) {
       console.log('response', response);
       res.status(200).send(response);
     }, (err) => {
-      res.status(400).send('Error during creating category');
+      res.status(400).send('Error during creating property');
     })
 
 });
