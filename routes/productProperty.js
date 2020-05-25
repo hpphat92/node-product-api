@@ -1,5 +1,5 @@
 var express = require('express');
-var query = require('../query/productProperty');
+var query = require('../query/basicProperty');
 
 var router = express.Router();
 
