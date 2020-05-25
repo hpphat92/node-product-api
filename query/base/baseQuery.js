@@ -1,4 +1,4 @@
-const knex = require('../db/knex');
+const knex = require('../../db/knex');
 
 function BaseQuery(TABLE_NAME) {
   function convertNameToSlug(str, separator) {
@@ -20,6 +20,20 @@ function BaseQuery(TABLE_NAME) {
     return str;
   }
 
+  async function generateSlug(slugName){
+    const duplicateItem = await knex(TABLE_NAME)
+      .where({
+        slug: slugName
+      });
+
+    if (duplicateItem && duplicateItem.length) {
+      slugName += `-${ Date.now() }`;
+    }
+
+    return slugName;
+  }
+
+
   function getList({ orderBy = 'name', orderDirection = 'asc' } = {}) {
     return knex(TABLE_NAME)
       .select()
@@ -38,41 +52,42 @@ function BaseQuery(TABLE_NAME) {
   async function create(model) {
     model.slug = model.slug || convertNameToSlug(model.name);
 
-    const duplicateCategories = await knex(TABLE_NAME)
-      .where({
-        slug: model.slug
-      });
 
-    if (duplicateCategories && duplicateCategories.length) {
-      model.slug += Date.now();
-    }
-    return knex(TABLE_NAME).insert(model);
+    model.slug = generateSlug(model.slug);
+
+    return knex(TABLE_NAME)
+      .insert(model)
+      .returning('id');
   }
 
-  function update(model) {
+  async function update(model) {
+    model.slug = model.slug || convertNameToSlug(model.name);
+
+    model.slug = generateSlug(model.slug);
+
     return knex(TABLE_NAME)
       .where({ id: model.id })
       .update(model);
   }
 
-  function deleteById(categoryId) {
+  function deleteById(id) {
     return knex(TABLE_NAME)
       .where({
-        id: categoryId
+        id
       })
       .delete();
 
   }
 
-  function checkExisting(categoryName, ignoreCategoryId) {
+  function checkExisting(name, ignoreId) {
     let queryBuilder = knex(TABLE_NAME)
       .where({
-        name: categoryName
+        name: name
       });
-    if (ignoreCategoryId) {
+    if (ignoreId) {
       queryBuilder = queryBuilder
         .whereNot({
-          id: ignoreCategoryId
+          id: ignoreId
         })
     }
 

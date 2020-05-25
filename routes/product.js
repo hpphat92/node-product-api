@@ -48,8 +48,6 @@ router.delete('/:id', async function (req, res) {
 router.put('/', async function (req, res) {
   const body = req.body;
 
-  await checkExisting(res, body.name, body.id);
-
   query.update(body)
     .then((response) => {
       res.sendStatus(200);

@@ -1,5 +1,5 @@
 const knex = require('../db/knex');
-const BaseQuery = require('./baseQuery');
+const BaseQuery = require('./base/baseQuery');
 
 
 const TABLE_NAME = 'category';
