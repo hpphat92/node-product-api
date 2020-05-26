@@ -8,6 +8,7 @@ const query = new BaseQuery(TABLE_NAME);
 const oldCreate = query.create;
 const oldUpdate = query.update;
 const oldGetById = query.getById;
+const oldDeleteById = query.deleteById;
 
 query.create = async (model) => {
   try {
@@ -28,14 +29,14 @@ query.create = async (model) => {
       price
     };
     const productId = (await oldCreate(newModel))[0];
-    if(productCategories){
+    if (productCategories) {
       const md = productCategories.map(c => ({
         productId: productId,
         categoryId: c.id
       }));
       await productCategoryQuery.createMany(md);
     }
-    if(productProperties){
+    if (productProperties) {
       const md = productProperties.map(c => ({
         productId: productId,
         basicPropertyId: c.id
@@ -54,8 +55,8 @@ query.update = async (model) => {
       description,
       oldPrice,
       price,
-      productCategories,
-      productProperties,
+      productCategory,
+      productProperty,
       slug,
       id
     } = model;
@@ -69,8 +70,8 @@ query.update = async (model) => {
     };
     await oldUpdate(updateModel);
     await productCategoryQuery.deleteByProductId(id);
-    if(productCategories){
-      const md = productCategories.map(c => ({
+    if (productCategory) {
+      const md = productCategory.map(c => ({
         productId: id,
         categoryId: c.id
       }));
@@ -87,6 +88,12 @@ query.getById = async function (id) {
   const productCategory = await productCategoryQuery.getCategoryByProductId(id);
   product.productCategory = productCategory;
   return product;
-}
+};
+query.deleteById = async function (id) {
+
+  await productCategoryQuery.deleteByProductId(id);
+  await oldDeleteById(id);
+  return { id };
+};
 
 module.exports = query;
