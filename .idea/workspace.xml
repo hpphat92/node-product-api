@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d671696e-797e-4344-9307-88df611e308f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/query/baseEntityQuery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/query/productCategory.js" afterDir="false" />
+    <list default="true" id="d671696e-797e-4344-9307-88df611e308f" name="Default Changelist" comment="Add delete product API">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/upload.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/query/baseQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/query/baseQuery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/query/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/query/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +27,28 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/routes" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -50,21 +64,102 @@
       <workItem from="1590112387541" duration="1882000" />
       <workItem from="1590153597225" duration="403000" />
       <workItem from="1590243910762" duration="3894000" />
+      <workItem from="1590543342635" duration="1442000" />
     </task>
+    <task id="LOCAL-00001" summary="Add delete product API">
+      <created>1590501293399</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590501293399</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add delete product API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add delete product API" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="268" y="28" key="CommitChangelistDialog2" timestamp="1590052720551">
+    <state x="184" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590545229611">
       <screen x="0" y="23" width="1440" height="800" />
     </state>
-    <state x="268" y="28" key="CommitChangelistDialog2/0.23.1440.800@0.23.1440.800" timestamp="1590052720551" />
-    <state x="144" y="92" key="DiffContextDialog" timestamp="1590052717916">
+    <state x="184" y="86" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.800@0.23.1440.800" timestamp="1590545229611" />
+    <state x="268" y="28" key="CommitChangelistDialog2" timestamp="1590546067885">
       <screen x="0" y="23" width="1440" height="800" />
     </state>
-    <state x="144" y="92" key="DiffContextDialog/0.23.1440.800@0.23.1440.800" timestamp="1590052717916" />
+    <state x="268" y="28" key="CommitChangelistDialog2/0.23.1440.800@0.23.1440.800" timestamp="1590546067885" />
+    <state width="941" height="466" key="DebuggerActiveHint" timestamp="1590545343046">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="941" height="466" key="DebuggerActiveHint/0.23.1440.800@0.23.1440.800" timestamp="1590545343046" />
+    <state x="144" y="92" key="DiffContextDialog" timestamp="1590546051795">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="144" y="92" key="DiffContextDialog/0.23.1440.800@0.23.1440.800" timestamp="1590546051795" />
+    <state width="1065" height="324" key="GridCell.Tab.0.bottom" timestamp="1590545863977">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.0.bottom/0.23.1440.800@0.23.1440.800" timestamp="1590545863977" />
+    <state width="1065" height="324" key="GridCell.Tab.0.center" timestamp="1590545863977">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.0.center/0.23.1440.800@0.23.1440.800" timestamp="1590545863977" />
+    <state width="1065" height="324" key="GridCell.Tab.0.left" timestamp="1590545863976">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.0.left/0.23.1440.800@0.23.1440.800" timestamp="1590545863976" />
+    <state width="1065" height="324" key="GridCell.Tab.0.right" timestamp="1590545863977">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.0.right/0.23.1440.800@0.23.1440.800" timestamp="1590545863977" />
+    <state width="1065" height="324" key="GridCell.Tab.1.bottom" timestamp="1590545863978">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.1.bottom/0.23.1440.800@0.23.1440.800" timestamp="1590545863978" />
+    <state width="1065" height="324" key="GridCell.Tab.1.center" timestamp="1590545863978">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.1.center/0.23.1440.800@0.23.1440.800" timestamp="1590545863978" />
+    <state width="1065" height="324" key="GridCell.Tab.1.left" timestamp="1590545863978">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.1.left/0.23.1440.800@0.23.1440.800" timestamp="1590545863978" />
+    <state width="1065" height="324" key="GridCell.Tab.1.right" timestamp="1590545863978">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.1.right/0.23.1440.800@0.23.1440.800" timestamp="1590545863978" />
+    <state width="1065" height="324" key="GridCell.Tab.2.bottom" timestamp="1590545863979">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.2.bottom/0.23.1440.800@0.23.1440.800" timestamp="1590545863979" />
+    <state width="1065" height="324" key="GridCell.Tab.2.center" timestamp="1590545863978">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.2.center/0.23.1440.800@0.23.1440.800" timestamp="1590545863978" />
+    <state width="1065" height="324" key="GridCell.Tab.2.left" timestamp="1590545863978">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.2.left/0.23.1440.800@0.23.1440.800" timestamp="1590545863978" />
+    <state width="1065" height="324" key="GridCell.Tab.2.right" timestamp="1590545863979">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state width="1065" height="324" key="GridCell.Tab.2.right/0.23.1440.800@0.23.1440.800" timestamp="1590545863979" />
+    <state x="320" y="164" key="Vcs.Push.Dialog.v2" timestamp="1590501295041">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="320" y="164" key="Vcs.Push.Dialog.v2/0.23.1440.800@0.23.1440.800" timestamp="1590501295041" />
+    <state x="483" y="276" key="cloudConfig.SelfSettingsDialog" timestamp="1590543396479">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="483" y="276" key="cloudConfig.SelfSettingsDialog/0.23.1440.800@0.23.1440.800" timestamp="1590543396479" />
+    <state x="388" y="71" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1590545014729">
+      <screen x="0" y="23" width="1440" height="800" />
+    </state>
+    <state x="388" y="71" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.800@0.23.1440.800" timestamp="1590545014729" />
     <state x="383" y="187" width="673" height="472" key="find.popup" timestamp="1590417174516">
       <screen x="0" y="23" width="1440" height="800" />
     </state>
@@ -73,9 +168,9 @@
       <screen x="0" y="23" width="1440" height="800" />
     </state>
     <state x="385" y="191" key="run.anything.popup/0.23.1440.800@0.23.1440.800" timestamp="1590408492570" />
-    <state x="385" y="147" width="670" height="676" key="search.everywhere.popup" timestamp="1590075448495">
+    <state x="385" y="147" width="670" height="676" key="search.everywhere.popup" timestamp="1590543400144">
       <screen x="0" y="23" width="1440" height="800" />
     </state>
-    <state x="385" y="147" width="670" height="676" key="search.everywhere.popup/0.23.1440.800@0.23.1440.800" timestamp="1590075448495" />
+    <state x="385" y="147" width="670" height="676" key="search.everywhere.popup/0.23.1440.800@0.23.1440.800" timestamp="1590543400144" />
   </component>
 </project>
